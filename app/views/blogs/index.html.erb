@@ -1,6 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Blogs</h1>
+<p>
+  Press <%= link_to 'here', search_blogs_path %> to search for blogs.
+</p>
+<div id="user-widget">
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <% end %>
+</div>
+
+
 
 <table>
   <thead>

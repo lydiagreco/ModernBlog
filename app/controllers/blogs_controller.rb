@@ -71,6 +71,14 @@ class BlogsController < ApplicationController
     redirect_to blogs_url, notice: 'Post status has been updated.'
   end
 
+  def search
+   query = params[:search_blogs].presence && params[:search_blogs][:query]
+
+   if query
+     @blogs = Blog.search_published(query)
+   end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog

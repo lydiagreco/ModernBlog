@@ -1,0 +1,38 @@
+<h1>Elastic search for blogs</h1>
+
+<%= form_for :search_blogs, url: search_blogs_path, method: :get do |form| %>
+  <%= form.text_field :query, value: params[:search_blogs].presence && params[:search_blogs[:query]] %>
+  <%= form.submit 'Search' %>
+<% end %>
+
+<% unless @posts.nil? %>
+  <% if @blogs.empty? %>
+    <h2>No blogs found matching your query.</h2>
+  <% else %>
+    <h2>Search results</h2>
+
+    <table style="width: 100%;">
+      <thead>
+         <tr>
+           <th>Author</th>
+           <th>Title</th>
+           <th>Tags</th>
+           <th>Published on</th>
+           <th>Actions</th>
+         </tr>
+      </thead>
+
+      <tbody>
+        <% @blogs.each do |post| %>
+          <tr>
+            <td><%= blog.author %></td>
+            <td><%= blog.title %></td>
+            <td><%= blog.tags %></td>
+            <td><%= blog.published_on %></td>
+            <td><%= link_to 'View', blog_path(post.id) %></td>
+          </tr>
+        <% end %>
+      <tbody>
+    </table>
+  <% end %>
+<% end %>

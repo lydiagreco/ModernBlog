@@ -16,11 +16,6 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'omniauth', '~> 1.8', '>= 1.8.1'
-gem 'omniauth-github', '~> 1.3'
-gem 'omniauth-facebook', '~> 4.0'
-gem 'omniauth-twitter', '~> 1.4'
-
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -52,4 +47,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'devise', '~> 4.4', '>= 4.4.2'
+gem 'omniauth-facebook', '~> 4.0'
+gem 'omniauth-twitter', '~> 1.4'
+gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 

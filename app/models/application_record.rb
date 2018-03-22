@@ -1,4 +1,3 @@
-class ApplicationRecord < ActiveRecord::Base
-  require 'omniauth'  
+class ApplicationRecord < ActiveRecord::Base 
   self.abstract_class = true
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "blogs#index"
   get '/auth/:provider/callback', to: 'sessions#create'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :blog]

@@ -54,4 +54,6 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+gem 'gritter', '~> 1.2'
 

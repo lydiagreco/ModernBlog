@@ -1,8 +1,18 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-
+/*
+ *= require_self
+ *= require_tree .
+*/
 /*
  * Globals
  */
+
+.navbar-custom {
+    color: black;
+    background-color: #fdeaf1;
+}
 
 @media (min-width: 48em) {
   html {
@@ -12,7 +22,10 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #555;
+  color: black;
+  background: url('http://demo.icetheme.com/it_orchidshop/images/sampledata/clone/backgrounds/image2.jpg') no-repeat center center;
+  background-size: cover;
+ /* For a full size background image */
 }
 
 h1, .h1,
@@ -47,6 +60,7 @@ h6, .h6 {
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }
 
+
 /* Nav links */
 .nav-link {
   position: relative;
@@ -77,8 +91,6 @@ h6, .h6 {
   border-bottom: .3rem solid;
   border-left: .3rem solid transparent;
 }
-
-
 /*
  * Blog name and description
  */
@@ -116,7 +128,7 @@ h6, .h6 {
 }
 .sidebar-module-inset {
   padding: 1rem;
-  background-color: #f5f5f5;
+  background-color: #fdeaf1;
   border-radius: .25rem;
 }
 .sidebar-module-inset p:last-child,
@@ -161,7 +173,7 @@ h6, .h6 {
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #fdeaf1;
   border-top: .05rem solid #e5e5e5;
 }
 .blog-footer p:last-child {
@@ -180,6 +192,11 @@ h6, .h6 {
   margin-top: 15px;
 }
 
+.card {
+  background-color: #fdeaf1;
+  color: black;
+}
+
 .comment-attribution {
   font-size: .8em;
   font-style: italic;
@@ -187,6 +204,7 @@ h6, .h6 {
 
 .comment-name {
   font-weight: 700;
+  color: white;
 }
 
 .blogcrumb a {
@@ -233,4 +251,18 @@ h6, .h6 {
 .topic-index > .card {
   margin: 10px;
   padding: 20px;
+}
+
+
+#background {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ min-width: 100%;
+ min-height: 100%;
+ width: 100%;
+ height: auto;
+ z-index: -100;
+ -webkit-transform: translateX(-50%) translateY(-50%);
+ transform: translateX(-50%) translateY(-50%);
 }

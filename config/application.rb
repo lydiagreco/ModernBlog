@@ -19,7 +19,7 @@ Bundler.require(*Rails.groups)
 
 module ModernBlog
   class Application < Rails::Application
-
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.session_store :cookie_store, key: '_interslice_session'

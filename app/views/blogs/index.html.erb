@@ -16,6 +16,7 @@
  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
  <body>
+    <%= render 'shared/blog_masthead' %>
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -52,7 +53,7 @@
             <div class="card-body">
               <div id="user-widget">
                 <% if current_user %>
-                 Welcome <strong><%= current_user.name %></strong>!
+                 Welcome!
                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
                 <% else %>
                   <div>
@@ -62,7 +63,7 @@
               </div>
               <div id="user-widget">
                <% if current_user %>
-                 Welcome <strong><%= current_user.name %></strong>!
+                 Welcome!
                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
                <% else %>
                  <div>
@@ -70,6 +71,7 @@
                  </div>
                <% end %>
              </div>
+             <%= link_to 'Login with Email', new_user_session_path %>
             </div>
           </div>
 
@@ -93,3 +95,5 @@
       </div>
     </div>
   </body>
+
+  <%= render 'shared/blog_footer' %>

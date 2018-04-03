@@ -31,11 +31,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.4', '>= 4.4.2'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-twitter', '~> 1.4'
+gem 'omniauth-identity', '~> 1.1', '>= 1.1.1'
 gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'gritter', '~> 1.2'
 gem 'bootstrap', '~> 4.0.0'
 gem 'dotenv-rails'
+gem 'petergate', '~> 1.6', '>= 1.6.3'
 
 
+ruby '2.4.1'

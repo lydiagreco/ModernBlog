@@ -1,9 +1,19 @@
 class SessionsController < ApplicationController
+  require 'omniauth-facebook'
+  require 'omniauth-twitter'
+  require 'omniauth-identity'
   def create
-    @user = User.find_or_create_from_auth_hash(auth_hash)
-    self.current_user = @user
-    session[:user_id] = user.id
+    @user = User.where(auth_hash).first_or_create
+    session[:user_id] = @user.id
     redirect_to '/'
+  end
+
+  def destroy
+    if current_user
+      session.delete(:user_id)
+      flash[:success] = "Sucessfully logged out!"
+    end
+    redirect_to root_path
   end
 
   protected

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-
+  :multiline => true
   class User < ApplicationRecord
    def self.find_or_create_from_auth_hash(auth_hash)
      user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create

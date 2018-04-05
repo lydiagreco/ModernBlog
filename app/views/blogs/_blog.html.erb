@@ -1,8 +1,13 @@
 <div class="blog-post">
   <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
   <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
-  
-  <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
+
+  <% if logged_in?(:admin) %>
+    <nav class="breadcrumb blogcrumb">
+      <%= link_to fa_icon('pencil-square-o'), edit_blog_path(blog) %>
+      <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  <% end %>
 
   <p>
     <%= blog.body %>

@@ -1,5 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 
 /*
  *= require_self
@@ -192,6 +195,9 @@ h6, .h6 {
  * Custom styles
  */
 
+.breadcrumb {
+  background: transparent;
+}
 .social-links li {
   font-size: 2.5em;
 }
@@ -261,6 +267,12 @@ h6, .h6 {
   padding: 20px;
 }
 
+.blogcrumb a {
+  font-size: 1.25em;
+  margin: 0px 10px 0px 10px;
+  background: transparent;
+
+}
 
 #background {
  position: fixed;

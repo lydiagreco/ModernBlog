@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: "blogs#index"
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/auth/:provider/callback', to: 'sessions#create'
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :blog]
   match 'auth/failure', to: redirect('/'), via: [:get, :blog]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :blog]
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  root to: "blogs#index"
 end

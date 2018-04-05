@@ -14,6 +14,7 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
 </head>
  <body>
     <%= render 'shared/blog_masthead' %>
@@ -41,7 +42,6 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
-          <%= link_to 'New Blog', new_blog_path %>
           <%= render @blogs %>
         </div>
 

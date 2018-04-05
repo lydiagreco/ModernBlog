@@ -1,5 +1,10 @@
 class Identity < ApplicationRecord
-  validates_presence_of :name
+  belongs_to :user
+  validates_presence_of :uid, :provider
   validates_uniqueness_of :email
-  validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
+  
+  def self.find_for_oauth(auth)
+    find_or_create_by(uid: auth.uid,provider: auth.provider)
+  end
 end
+

@@ -1,5 +1,4 @@
 require 'elasticsearch/model'
-require 'elasticsearch/persistence'
 
 class Blog < ApplicationRecord 
   include Elasticsearch::Model

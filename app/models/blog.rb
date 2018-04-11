@@ -1,5 +1,7 @@
+require 'elasticsearch/model'
+require 'elasticsearch/persistence'
 
-class Blog < ApplicationRecord
+class Blog < ApplicationRecord 
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   enum status: { draft: 0, published: 1 }

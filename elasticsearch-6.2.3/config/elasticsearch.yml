@@ -86,3 +86,5 @@
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
+
+action.auto_create_index: -l*,+z*

@@ -2,6 +2,7 @@ require 'elasticsearch/model'
 
 class Blog < ApplicationRecord 
   include Elasticsearch::Model
+  Elasticsearch::Model::Callbacks
   after_commit on: [:create] do
     begin
       __elasticsearch__.index_document
@@ -26,14 +27,6 @@ class Blog < ApplicationRecord
     end
   end
 
-  def as_indexed_json(options={})
-    as_json({
-      only: [ :id, :article_number, :user_id, :article_type, :comments, :posts, :replies, :status, :fb_share, :google_share, :author, :contributor_id, :created_at, :updated_at ],
-      include: {
-        posts: { only: [ :id, :article_id, :post ] },
-      }
-    })
-  end
   enum status: { draft: 0, published: 1 }
   validates_presence_of :title, :body
   settings do
@@ -67,3 +60,6 @@ class Blog < ApplicationRecord
    })
  end
 end
+
+Blog.import
+@blogs = Blog.search('foobar').records

@@ -29,7 +29,7 @@ class Blog < ApplicationRecord
 
   enum status: { draft: 0, published: 1 }
   validates_presence_of :title, :body
-  settings do
+  settings do |blog|
     mappings dynamic: false do
       indexes :author, type: :text
       indexes :title, type: :text, analyzer: :english
@@ -61,5 +61,3 @@ class Blog < ApplicationRecord
  end
 end
 
-Blog.import
-@blogs = Blog.search('foobar').records

@@ -2,7 +2,6 @@ require 'elasticsearch/model'
 
 class Blog < ApplicationRecord 
   include Elasticsearch::Model
-  Elasticsearch::Model::Callbacks
   after_commit on: [:create] do
     begin
       __elasticsearch__.index_document

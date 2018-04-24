@@ -60,3 +60,13 @@ class Blog < ApplicationRecord
  end
 end
 
+# Delete the previous articles index in Elasticsearch
+Blog.__elasticsearch__.client.indices.delete index: Blog.index_name rescue nil
+
+# Create the new index with the new mapping
+Blog.__elasticsearch__.client.indices.create \
+  index: Blog.index_name,
+  body: { settings: Blog.settings.to_hash, mappings: Blog.mappings.to_hash }
+
+# Index all article records from the DB to Elasticsearch
+Blog.import

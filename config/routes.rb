@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :blog]
   match 'auth/failure', to: redirect('/'), via: [:get, :blog]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :blog]
+  get 'search', to: 'search#search'
   resources :identities
   resources :blogs do
     member do

@@ -11,12 +11,15 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 require "omniauth"
+require "elasticsearch/model"
+require "elasticsearch/rails"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
+
 
 module ModernBlog
   class Application < Rails::Application

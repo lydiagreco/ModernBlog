@@ -14,21 +14,14 @@
     <table style="width: 100%;">
       <thead>
          <tr>
-           <th>Author</th>
            <th>Title</th>
-           <th>Tags</th>
-           <th>Published on</th>
-           <th>Actions</th>
          </tr>
       </thead>
 
       <tbody>
         <% @blogs.each do |blog| %>
           <tr>
-            <td><%= blog.author %></td>
             <td><%= blog.title %></td>
-            <td><%= blog.tags %></td>
-            <td><%= blog.published_on %></td>
             <td><%= link_to 'View', blog_path(blog.id) %></td>
           </tr>
         <% end %>

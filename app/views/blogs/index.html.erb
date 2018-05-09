@@ -53,7 +53,7 @@
             <div class="card-body">
               <div id="user-widget">
                 <% if current_user %>
-                 Welcome!
+                 Welcome From Facebook!
                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
                 <% else %>
                   <div>
@@ -63,7 +63,7 @@
               </div>
               <div id="user-widget">
                <% if current_user %>
-                 Welcome!
+                 Welcome From Twitter!
                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
                <% else %>
                  <div>
@@ -85,10 +85,7 @@
           <div class="card my-4">
             <div class="sidebar-module sidebar-module-inset">
              <h4>Search Blog Content</h4>
-             <%= form_for :search_blogs, url: search_blogs_path, method: :get do |form| %>
-               <%= form.text_field :query, value: params[:search_blogs].presence && params[:search_blogs][:query] %>
-               <%= form.submit 'Search' %>
-              <% end %>
+              Press <%= link_to 'here', search_blogs_path %> to search blogs.
            </div>
           </div>
         </div>

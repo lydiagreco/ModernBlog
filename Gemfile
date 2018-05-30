@@ -42,5 +42,6 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'dotenv-rails'
 gem 'petergate', '~> 1.6', '>= 1.6.3'
 gem 'friendly_id', '~> 5.1.0'
+gem 'faker'
 
 ruby '2.4.2'

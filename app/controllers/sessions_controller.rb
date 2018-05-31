@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.where(auth_hash).first_or_create
     session[:user_id] = @user.id
-    redirect_to '/'
+    redirect_to root_path
   end
 
   def destroy
